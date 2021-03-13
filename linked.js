@@ -1,11 +1,11 @@
 import {allUsers, linked} fom "users"
 
-const findUnlinkedUsers = () => {
+const findUnlinkedUsers = (allUsers, linkedUsers) => {
   var linkedUsersHash = {}
   var unLinkedUsers = []
 
-  for (let i = 0 ; i < linked.length; i++) {
-   linkedUsersHash[linked[i].id] =  linked[i].id
+  for (let i = 0 ; i < linkedUsers.length; i++) {
+   linkedUsersHash[linkedUsers[i].id] =  linkedUsers[i].id
   }
 
   for (let i = 0; i < allUsers.length; i++) {
@@ -16,4 +16,4 @@ const findUnlinkedUsers = () => {
   return unLinkedUsers
 }
 
-findUnlinkedUsers();
+findUnlinkedUsers(allUsers, linked);
